@@ -1,0 +1,28 @@
+#     accumulatorCp = np.zeros((accumulator.shape[0], accumulator.shape[1]), dtype=int)
+#     accumulatorCp[:] = accumulator
+#     numCircles = 0
+
+#     if radius == 16:
+#         numCircles = 3
+#     elif radius == 32:
+#         numCircles = 7
+#     else:
+#         numCircles = 2
+
+#     chosenXs = []
+#     i = 0
+#     while i < numCircles:
+#         ind = np.unravel_index(np.argmax(accumulatorCp, axis=None), accumulatorCp.shape)
+#         hasBeenPlotted = False
+
+#         #see if it hasn't been plotted
+#         for chosen in chosenXs:
+#             if abs(ind[0] - chosen) < 10:
+#                 hasBeenPlotted = True
+#                 accumulatorCp[ind[0], ind[1]] = 0
+
+#         if not hasBeenPlotted:
+#             i += 1
+#             cv2.circle(image, (ind[1] - radius, ind[0] - radius), radius, (22,250,8), 2)
+#             accumulatorCp[ind[0], ind[1]] = 0
+#             chosenXs.append(ind[0])
